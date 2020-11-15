@@ -20,8 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
+```bash
+$ find_shared_lines --help
+USAGE: find_shared_lines [OPTION] [Files]...
+    -e, --exclude-shared-lines       Exclude lines commonly included in given files
+    -s, --shared-lines               Collect lines shared in given files
+    -j, --join-lines                 Collect all lines in given files
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require "find_shared_lines"
+require 'find_shared_lines/command_line_interface'
+
+FindSharedLines::CommandLineInterface.execute

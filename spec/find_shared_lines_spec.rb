@@ -82,4 +82,52 @@ RSpec.describe FindSharedLines do
       expect(shared).to eq(expected)
     end
   end
+
+  describe '.join' do
+    it 'collects all lines in 2 files' do
+      expected = [
+        'only in a 1',
+        'only in a 2',
+        'only in b 1',
+        'only in b 2',
+        'in a and b 1',
+        'in a and b 2',
+        'in a and c 1',
+        'in a and c 2',
+        'in b and c 1',
+        'in b and c 2',
+        'in a, b and c 1',
+        'in a, b and c 2'
+      ].sort
+
+      files = ['fixtures/a.txt', 'fixtures/b.txt']
+      joined = FindSharedLines.join(files).sort
+
+      expect(joined).to eq(expected)
+    end
+
+    it 'collects all lines in 3 files' do
+      expected = [
+        'only in a 1',
+        'only in a 2',
+        'only in b 1',
+        'only in b 2',
+        'only in c 1',
+        'only in c 2',
+        'in a and b 1',
+        'in a and b 2',
+        'in a and c 1',
+        'in a and c 2',
+        'in b and c 1',
+        'in b and c 2',
+        'in a, b and c 1',
+        'in a, b and c 2'
+      ].sort
+
+      files = ['fixtures/a.txt', 'fixtures/b.txt', 'fixtures/c.txt']
+      joined = FindSharedLines.join(files).sort
+
+      expect(joined).to eq(expected)
+    end
+  end
 end

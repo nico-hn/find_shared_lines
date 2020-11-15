@@ -27,4 +27,8 @@ module FindSharedLines
   def self.shared_lines(files)
     reduce(files) { |first_file, file| first_file & file }
   end
+
+  def self.join(files)
+    reduce(files) { |first_file, file| first_file | file }
+  end
 end

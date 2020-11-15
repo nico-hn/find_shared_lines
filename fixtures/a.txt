@@ -1,0 +1,12 @@
+only in a 1
+only in a 2
+only in a 2
+in a and b 1
+in a and b 2
+in a and b 2
+in a and c 1
+in a and c 2
+in a and c 2
+in a, b and c 1
+in a, b and c 2
+in a, b and c 2

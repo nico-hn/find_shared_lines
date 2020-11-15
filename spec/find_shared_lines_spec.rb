@@ -54,4 +54,32 @@ RSpec.describe FindSharedLines do
       expect(remaining).to eq(expected)
     end
   end
+
+  describe '.shared_lines' do
+    it 'collects lines shared in 2 files' do
+      expected = [
+        'in a and b 1',
+        'in a and b 2',
+        'in a, b and c 1',
+        'in a, b and c 2'
+      ].sort
+
+      files = ['fixtures/a.txt', 'fixtures/b.txt']
+      shared = FindSharedLines.shared_lines(files).sort
+
+      expect(shared).to eq(expected)
+    end
+
+    it 'collects lines shared in 3 files' do
+      expected = [
+        'in a, b and c 1',
+        'in a, b and c 2'
+      ].sort
+
+      files = ['fixtures/a.txt', 'fixtures/b.txt', 'fixtures/c.txt']
+      shared = FindSharedLines.shared_lines(files).sort
+
+      expect(shared).to eq(expected)
+    end
+  end
 end
